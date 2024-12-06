@@ -1042,12 +1042,10 @@ data.forEach((v) => {
       arr.splice(i, 1);
       return arr;
     });
-    arrMutations.forEach((e) => {
-      if (isSafe(e)) {
-        console.log(e, v);
-        safeCount++;
-      }
-    });
+    
+    if (arrMutations.some(aa => isSafe(aa))) {
+      safeCount++
+    }
   }
 });
 
